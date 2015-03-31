@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+{% load pipeline %}
+<head lang="en">
+
+    <title>Title</title>
+    <meta name="description" content="description"/>
+    <meta name="keywords" content="keywords, comma separated values,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="publisher" href="https://plus.google.com/+SaadBinShahid/"/>
+    <link rel="developer" href="https://plus.google.com/+SaadBinShahid/"/>
+    <meta property="fb:page_id" content="Saadbinshahid.fb"/>
+
+    <!-- Sharing widget start -->
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <!-- Sharing widget end -->
+
+    <link rel="icon" type="image/jpeg" href="/favicon.jpg"/>
+
+    {% stylesheet 'bootstrap' %}
+    {% stylesheet 'animate' %}
+    <link rel="stylesheet" href="/static/css/normalize.css">
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="container"> <!-- page container start -->
+
+    <!-- Google Tag Manager
+    goes here
+    -->
+
+
+    {% load bootstrap3 %}
+
+    <div class="row">
+        <!-- messages --> <br/>
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            {% bootstrap_messages msg %}
+        </div>
+    </div>
+
+    {% for x in '1,2,3' %}
+    <div class='row'>
+        <div class='container'>
+
+            <div class='animatedParent'>
+                <hr class='animated fadeIn slow'/>
+            </div>
+
+            <!-- Animate Once -->
+            <div class='animatedParent row article' data-appear-top-offset='-100'>
+                <h3 class='animated bounceInDown'>Animate Once</h3>
+
+                <div class='col-md-6'>
+                    <p class='animated bounceInLeft slow'>
+                        Adding this will make sure the item only animates once and will not reset when it leaves the
+                        viewport.
+                    </p>
+                </div>
+                <div class='animatedParent col-md-6'>
+<pre class='animated bounceInRight slow'>
+&lt;div class='animatedParent <span class='highlighter'>animateOnce</span>'&gt;
+&lt;h2 class='animated bounceInDown'&gt;It Works!&lt;/h2&gt;
+&lt;/div&gt;
+</pre>
+                    <div>
+                        <button type="submit" class="btn btn-primary hvr-bounce-in">
+                            Button
+                            {% bootstrap_icon "star" %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class='animatedParent'>
+                <hr class='animated fadeIn slow'/>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<!-- page container close -->
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
+{% bootstrap_javascript jquery=1 %}
+{% javascript 'animate' %}
+<script type="text/javascript">stLight.options({
+    publisher: "ab643f36-ab48-461b-bb3f-06aaeac0e1ff",
+    doNotHash: false,
+    doNotCopy: false,
+    hashAddressBar: false
+});</script>
+<script>
+    var options = {
+        "publisher": "ab643f36-ab48-461b-bb3f-06aaeac0e1ff",
+        "position": "left",
+        "ad": {"visible": false, "openDelay": 5, "closeDelay": 0},
+        "chicklets": {"items": ["facebook", "twitter", "linkedin", "pinterest", "googleplus", "pocket", "email", "sharethis"]}
+    };
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
+</body>
+</html>
