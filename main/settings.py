@@ -39,14 +39,18 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pinax_theme_bootstrap',
+    'bootstrapform',
     'pipeline',
     'bootstrap3',
     'twitter_bootstrap',
     'landing',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,6 +61,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # account middleware added
+    "account.middleware.LocaleMiddleware",
+    "account.middleware.TimezoneMiddleware",
 )
 
 ROOT_URLCONF = 'main.urls'
@@ -155,3 +162,28 @@ PIPELINE_JS = {
 PIPELINE_COMPILERS = (
     'pipeline.compilers.less.LessCompiler',
 )
+
+
+
+# accounts-app setting
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
+    "account.context_processors.account",
+    "pinax_theme_bootstrap.context_processors.theme" # pinar-ootstrap-theme
+)
+
+# Sites setting
+SITE_ID = 1
+
+# smtpd development settings
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
